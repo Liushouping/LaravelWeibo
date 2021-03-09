@@ -2,20 +2,20 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>找回密码</title>
+  <title>找回密碼</title>
 </head>
 <body>
-  <h1>您正在尝试找回密码</h1>
+  <h1>您正在嘗試找回密碼</h1>
 
   <p>
-    请点击以下链接进入下一步操作：
+    請點擊以下連結進入下一步操作：
     <a href="{{ route('password.reset', $token) }}">
       {{ route('password.reset', $token) }}
     </a>
   </p>
 
   <p>
-    如果这不是您本人的操作，请忽略此邮件。
+    如果這不是您本人的操作，請忽略此信件。
   </p>
 </body>
 </html>

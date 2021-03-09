@@ -50,7 +50,7 @@ class UsersController extends Controller
         ]);
 
         $this->sendEmailConfirmationTo($user);
-        session()->flash('success', '验证邮件已发送到你的注册邮箱上，请注意查收。');
+        session()->flash('success', '驗證信件已發送到你的註冊信箱上，請注意查收。');
         return redirect('/');
     }
 
@@ -75,7 +75,7 @@ class UsersController extends Controller
         }
         $user->update($data);
 
-        session()->flash('success', '个人资料更新成功！');
+        session()->flash('success', '個人資料更新成功！');
 
         return redirect()->route('users.show', $user);
     }
@@ -84,7 +84,7 @@ class UsersController extends Controller
     {
         $this->authorize('destroy', $user);
         $user->delete();
-        session()->flash('success', '成功删除用户！');
+        session()->flash('success', '成功刪除用户！');
         return back();
     }
 
@@ -93,7 +93,7 @@ class UsersController extends Controller
         $view = 'emails.confirm';
         $data = compact('user');
         $to = $user->email;
-        $subject = "感谢注册 Weibo 应用！请确认你的邮箱。";
+        $subject = "感謝註冊Weibo應用！請確認你的信箱。";
 
         Mail::send($view, $data, function ($message) use ($to, $subject) {
             $message->to($to)->subject($subject);
@@ -124,14 +124,14 @@ class UsersController extends Controller
     public function followings(User $user)
     {
         $users = $user->followings()->paginate(30);
-        $title = $user->name . '关注的人';
+        $title = $user->name . '關注的人';
         return view('users.show_follow', compact('users', 'title'));
     }
 
     public function followers(User $user)
     {
         $users = $user->followers()->paginate(30);
-        $title = $user->name . '的粉丝';
+        $title = $user->name . '的粉絲';
         return view('users.show_follow', compact('users', 'title'));
     }
 }
