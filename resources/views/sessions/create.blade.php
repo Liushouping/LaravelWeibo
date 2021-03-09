@@ -11,7 +11,7 @@
       @include('shared._errors')
 
       <form method="POST" action="{{ route('login') }}">
-          @csrf
+          {{ csrf_field() }}
 
           <div class="form-group">
             <label for="email">信箱：</label>

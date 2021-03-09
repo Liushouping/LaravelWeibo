@@ -18,8 +18,8 @@
         </div>
 
         <form method="POST" action="{{ route('users.update', $user->id )}}">
-            @method('PUT')
-            @csrf
+            {{ method_field('PATCH') }}
+            {{ csrf_field() }}
 
             <div class="form-group">
               <label for="name">姓名：</label>

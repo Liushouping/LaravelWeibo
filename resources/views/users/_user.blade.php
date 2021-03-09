@@ -5,7 +5,7 @@
   </a>
   @can('destroy', $user)
     <form action="{{ route('users.destroy', $user->id) }}" method="post" class="float-right">
-      @csrf
+      {{ csrf_field() }}
       @medthd('delete')
       <button type="submit" class="btn btn-sm btn-danger delete-btn">刪除</button>
     </form>

@@ -14,7 +14,7 @@
       @endif
 
       <form class="" method="POST" action="{{ route('password.email') }}">
-        @csrf
+        {{ csrf_field() }}
 
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
           <label for="email" class="form-control-label">信箱帳號：</label>

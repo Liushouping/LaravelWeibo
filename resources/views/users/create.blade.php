@@ -12,7 +12,7 @@
       @include('shared._errors')
 
       <form method="POST" action="{{ route('users.store') }}">
-        @csrf
+        {{ csrf_field() }}
 
         <div class="form-group">
           <label for="name">姓名：</label>
