@@ -14,7 +14,6 @@
 
     <section class="stats mt-2">
       @include('shared._stats', ['user' => $user])
-      123
     </section>
     <hr>
     <section class="status">
