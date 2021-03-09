@@ -36,7 +36,7 @@ class PasswordController extends Controller
 
         // 3. 如果不存在
         if (is_null($user)) {
-            session()->flash('danger', '邮箱未註冊');
+            session()->flash('danger', '信箱未註冊');
             return redirect()->back()->withInput();
         }
 
@@ -52,10 +52,10 @@ class PasswordController extends Controller
 
         // 6. 将 Token 連結发送给用户
         Mail::send('emails.reset_link', compact('token'), function ($message) use ($email) {
-            $message->to($email)->subject("忘记密碼");
+            $message->to($email)->subject("忘記密碼");
         });
 
-        session()->flash('success', '重置邮件发送成功，请查收');
+        session()->flash('success', '重置信件發送成功，請查收');
         return redirect()->back();
     }
 
@@ -83,7 +83,7 @@ class PasswordController extends Controller
 
         // 3. 如果不存在
         if (is_null($user)) {
-            session()->flash('danger', '邮箱未註冊');
+            session()->flash('danger', '信箱未註冊');
             return redirect()->back()->withInput();
         }
 
